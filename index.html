@@ -7,19 +7,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
-        /* ===== 1. Global Styles & Variables from original style.css ===== */
+        /* ================================================= */
+        /* ===== 1. LIGHT THEME GLOBAL STYLES & VARIABLES ===== */
+        /* ================================================= */
         :root {
-            --primary-color: #00bfff; /* Deep Sky Blue */
-            --bg-color: #0d1117;      /* Dark background */
-            --text-color: #c9d1d9;    /* Light grey text */
-            --input-bg-color: rgba(255, 255, 255, 0.05);
-            --input-border: rgba(255, 255, 255, 0.3);
-            --form-bg: rgba(255, 255, 255, 0.15); /* Increased opacity for more 'fog' effect */
-            --form-border: rgba(255, 255, 255, 0.2);
+            --primary-color: #007bff; /* Bright Blue Accent (remains distinct) */
+            --bg-color: #f0f2f5;      /* Light background */
+            --text-color: #555555;    /* Dark grey text for readability */
+            --heading-color: #111111; /* Near-black headings */
+            
+            --input-border: rgba(0, 0, 0, 0.3); /* Dark line border */
+            
+            /* GLASSMOPHISM COLORS (Transparent White/Light) */
+            --form-bg: rgba(255, 255, 255, 0.85); /* Highly transparent white for 'fog' effect */
+            --form-border: rgba(0, 0, 0, 0.1); /* Soft dark border */
+            
+            /* BUTTON COLORS (Remain orange for visual consistency) */
             --button-color-start: #ff7e00; 
             --button-color-end: #f5a623;   
-            /* New variable for the secondary button (e.g., Google/Cancel) */
-            --secondary-btn-bg: rgba(255, 255, 255, 0.1); 
+            --secondary-btn-bg: #e9ecef; /* Light gray for secondary button (Google/Cancel) */
+
+            /* PURE BLUE for Particles */
+            --particle-color: #0000ff; /* PURE BLUE */
         }
 
         * {
@@ -60,20 +69,20 @@
             padding: 40px;
             border-radius: 20px;
             
-            /* Enhanced Glassmorphism Effect */
-            background: rgba(255, 255, 255, 0.059);
-            backdrop-filter: blur(5px); /* Retained the blur value you provided */
-            -webkit-backdrop-filter: blur(5px);
+            /* Glassmorphism Effect - Using new variables */
+            background: rgba(255, 255, 255, 0.653);
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(50px);
             
             border: 1px solid var(--form-border);
-            box-shadow: 0 4px 30px rgb(255, 255, 255); /* Retained the shadow value you provided */
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
             
             transition: all 0.5s ease-in-out;
         }
 
         .form-container h2 {
             font-size: 2.2rem;
-            color: #ffffff;
+            color: var(--heading-color);
             text-align: center;
             margin-bottom: 2.5rem;
             font-weight: 500;
@@ -99,7 +108,7 @@
             background: none;
             border: none;
             border-bottom: 1px solid var(--input-border);
-            color: #ffffff;
+            color: var(--heading-color); 
             font-size: 1.1rem;
             outline: none;
             transition: border-color 0.3s ease;
@@ -146,7 +155,7 @@
             cursor: pointer;
             box-shadow: 0 4px 15px rgba(255, 126, 0, 0.4);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin-bottom: 1rem; /* Added margin for new buttons */
+            margin-bottom: 1rem;
         }
 
         .btn-submit:hover {
@@ -154,13 +163,13 @@
             box-shadow: 0 6px 20px rgba(255, 126, 0, 0.6);
         }
 
-        /* Secondary Button (Google/Cancel) Styling - New */
+        /* Secondary Button (Google/Cancel) Styling - Using new light variable */
         .btn-secondary-submit {
             display: block;
             width: 100%;
             padding: 12px 24px;
             background: var(--secondary-btn-bg);
-            color: #ffffff;
+            color: var(--heading-color); 
             border: 1px solid var(--form-border);
             border-radius: 5px;
             font-weight: 500;
@@ -171,10 +180,10 @@
         }
         
         .btn-secondary-submit:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: #d4d4d4;
         }
 
-        /* OR Divider Styling - New */
+        /* OR Divider Styling */
         .divider {
             display: flex;
             align-items: center;
@@ -188,7 +197,7 @@
         .divider::after {
             content: '';
             flex: 1;
-            border-bottom: 1px solid var(--input-border);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.15); 
         }
 
         .divider:not(:empty)::before {
@@ -220,7 +229,7 @@
             position: absolute;
             right: 0;
             bottom: 12px;
-            color: var(--input-border);
+            color: rgba(0, 0, 0, 0.3);
             font-size: 1.1rem;
             pointer-events: none;
         }
@@ -292,18 +301,18 @@
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     
     <script>
-        /* ===== 1. Particles.js Initialization (More Lines) ===== */
+        /* ===== 1. Particles.js Initialization (More Lines) - Updated Color ===== */
         particlesJS("particles-js", {
             "particles": {
                 "number": {
-                    "value": 120, // Increased number of particles (from 80 to 120)
+                    "value": 120, 
                     "density": {
                         "enable": true,
                         "value_area": 800
                     }
                 },
                 "color": {
-                    "value": "#00bfff" // Particle color (your primary color)
+                    "value": "#0000ff" // Updated to #0000ff (Pure Blue)
                 },
                 "shape": {
                     "type": "circle",
@@ -319,13 +328,13 @@
                 "line_linked": {
                     "enable": true,
                     "distance": 150,
-                    "color": "#00bfff", // Line color
-                    "opacity": 0.6, // Increased line opacity (from 0.4 to 0.6)
-                    "width": 1.5 // Increased line width (from 1 to 1.5)
+                    "color": "#0000ff", // Updated to #0000ff (Pure Blue)
+                    "opacity": 0.6, 
+                    "width": 1.5 
                 },
                 "move": {
                     "enable": true,
-                    "speed": 2, // Movement speed
+                    "speed": 2, 
                     "direction": "none",
                     "random": false,
                     "straight": false,
