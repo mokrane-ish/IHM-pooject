@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Login & Sign Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="particles-js"></div>
+
+    <div class="form-container">
+        
+        <form id="login-form">
+            <h2>LOGIN</h2>
+            
+            <div class="form-group">
+                <label for="login-username">Username</label>
+                <input type="text" id="login-username" required>
+                <i class="fas fa-user input-icon"></i>
+            </div>
+            
+            <div class="form-group">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" required>
+                <i class="fas fa-lock input-icon"></i>
+            </div>
+            
+            <div class="options">
+                <label>
+                    <input type="checkbox"> Remember me
+                </label>
+                <a href="#" class="forgot-password">Forgot password?</a>
+            </div>
+            
+            <button type="submit" class="btn-submit">LOGIN</button>
+            
+            <span class="toggle-link" onclick="showSignup()">Don't have an account? Register</span>
+        </form>
+        
+        <form id="signup-form" style="display:none;">
+            <h2>SIGN UP</h2>
+
+            <button type="button" class="btn-secondary-submit">
+                <i class="fab fa-google"></i> Continue with Google
+            </button>
+
+            <div class="divider">OR</div>
+            
+            <div class="form-group">
+                <label for="signup-email">Email</label>
+                <input type="email" id="signup-email" required>
+                <i class="fas fa-envelope input-icon"></i>
+            </div>
+            
+            <div class="form-group">
+                <label for="signup-password">Password</label>
+                <input type="password" id="signup-password" required>
+                <i class="fas fa-lock input-icon"></i>
+            </div>
+            
+            <button type="submit" class="btn-submit">REGISTER</button>
+
+            <span class="toggle-link" onclick="showLogin()">Already have an account? Login</span>
+
+            <button type="button" class="btn-secondary-submit" onclick="showLogin()">CANCEL</button>
+        </form>
+
+    </div>
+
+    <script src="particles.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
