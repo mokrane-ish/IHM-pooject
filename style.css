@@ -18,8 +18,6 @@
     --button-color-end: #f5a623;   
     --secondary-btn-bg: #e9ecef; /* Light gray for secondary button (Google/Cancel) */
 
-    /* PURE BLUE for Particles */
-    --particle-color: #0000ff; /* PURE BLUE */
 }
 
 * {
@@ -41,15 +39,7 @@ body {
     overflow: hidden; 
 }
 
-/* ===== 2. Particles Background (From original style.css) ===== */
-#particles-js {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1; 
-}
+
 
 /* ===== 3. Glassmorphism Login/Sign-up Container (ENHANCED BLUR) ===== */
 .form-container {
@@ -221,4 +211,5 @@ body {
     color: rgba(0, 0, 0, 0.3);
     font-size: 1.1rem;
     pointer-events: none;
+
 }
